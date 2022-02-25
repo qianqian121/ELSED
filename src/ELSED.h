@@ -10,22 +10,22 @@ namespace upm {
 
 struct ELSEDParams {
   // Gaussian kernel size
-  int ksize = 5;
+  int ksize = 3;
   // Sigma of the gaussian kernel
   float sigma = 1;
   // The threshold of pixel gradient magnitude.
   // Only those pixels whose gradient magnitude are larger than
   // this threshold will be taken as possible edge points.
-  float gradientThreshold = 30;
+  float gradientThreshold = 3;
   // If the pixel's gradient value is bigger than both of its neighbors by a
   // certain anchorThreshold, the pixel is marked to be an anchor.
-  uint8_t anchorThreshold = 8;
+  uint8_t anchorThreshold = 3;
   // Anchor testing can be performed at different scan intervals, i.e.,
   // every row/column, every second row/column
   unsigned int scanIntervals = 2;
 
   // Minimum line segment length
-  int minLineLen = 15;
+  int minLineLen = 12;
   // Threshold used to check if a list of edge points for a line segment
   double lineFitErrThreshold = 0.2;
   // Threshold used to check if a new pixel is part of an already fit line segment
@@ -40,11 +40,11 @@ struct ELSEDParams {
   double validationTh = 0.15;
 
   // Whether to validate or not the generated segments
-  bool validate = true;
+  bool validate = false;
   // Whether to jump over junctions
   bool treatJunctions = true;
   // List of junction size that will be tested (in pixels)
-  std::vector<int> listJunctionSizes = {5, 7, 9};
+  std::vector<int> listJunctionSizes = {3};
 };
 
 /**
