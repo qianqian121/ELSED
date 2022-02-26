@@ -26,6 +26,7 @@ struct ELSEDParams {
 
   // Minimum line segment length
   int minLineLen = 15;
+//  int minLineLen = 255; // calib1 bag6 debug bakup
   // Threshold used to check if a list of edge points for a line segment
   double lineFitErrThreshold = 0.2;
   // Threshold used to check if a new pixel is part of an already fit line segment
